@@ -1,0 +1,22 @@
+
+<div class="container">
+<div class="row">
+<div class="col m6 offset-m3">
+	<h1 class="center light-blue lighten-3 z-depth-1">Log In</h1>
+</div>
+<div class="col m10 offset-m1">
+
+<%= form_for(:session, url: login_path, :html => {:class => "form"}) do |f| %>
+  <div class="input-group">
+    <%= f.label :email %>
+    <%= f.email_field :email %>  
+  </div>
+  <div class="input-group">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <%= f.submit "Log In" %>
+<% end %>
+</div>
+</div>
+</div>

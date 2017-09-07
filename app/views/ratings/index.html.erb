@@ -1,0 +1,12 @@
+<button><%= link_to("Rate Me", new_rating_path) %></button> 
+  <% @ratings.each do |r| %>
+
+
+        <h2>Title:<%= r.title %></h2>
+        <h4>Comment:<%= r.comment %></h4>
+        <h4>Rating:<%= r.rating %></h4>
+        
+     <%=link_to(r.title, "/ratings/#{r.id}") %>
+
+ 
+  <% end %>

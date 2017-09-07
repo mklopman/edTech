@@ -1,0 +1,14 @@
+<div class="container">	
+<nav>
+    <div class="nav-wrapper #29b6f6 light-blue lighten-1">
+      <a href="#" class="brand-logo">teachers4teachers</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><%= link_to("New Post", "../posts/new") %></li>
+        <li><%= link_to("Profile", current_user) %></li>
+        <li><%= link_to("Main", posts_path) %></li>
+        <li><%= link_to("Review", "../ratings/new") %></li>
+        <li><%= link_to("Logout", logout_path, :method => "delete") %></li>
+      </ul>
+    </div>
+  </nav>
+</div>

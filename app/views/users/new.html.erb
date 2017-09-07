@@ -1,0 +1,56 @@
+<div class="container">
+<div class="row">
+<div class="col m6 offset-m3">
+  <h1 class="center light-blue lighten-3 z-depth-1">Sign Up</h1>
+</div>
+<div class="col m10 offset-m1">
+
+
+
+<%= form_for(@user, :html => {:class => "form"}) do |f| %>
+  <div class="input-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="input-group">
+    <%= f.label :phone%>
+    <%= f.text_field :phone_num%>
+  </div>
+
+  <div class="input-group">
+    <%= f.label :skype %>
+    <%= f.text_field :skype %>
+  </div>
+
+  <div class="input-group">
+    <%= f.label :whatsapp %>
+    <%= f.text_field :whatsapp %>
+  </div>
+
+  <div class="input-group">
+    <%= f.label :facetime %>
+    <%= f.text_field :facetime %>
+ 
+  </div>
+
+  <div class="input-group">
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+   
+  </div>
+
+  <div class="input-group">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+   
+
+  <%= f.submit %>
+<% end %>
+
+
+</div>
+</div>
+</div>
+
+

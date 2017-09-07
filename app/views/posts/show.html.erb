@@ -1,0 +1,89 @@
+<div class="container">
+<div class="row">
+  <div class="center col m6 offset-m4">
+    <h1 class="col s6 offset-s1 z-depth-1 #81d4fa light-blue lighten-3">Post</h1>
+  </div>
+
+<div class="col m8 offset-m2">
+  <div class="show">
+    <div class="post-info info">
+      <div class="card small">
+        <div class="card small post #e1f5fe light-blue lighten-5">
+          <div class="card-title">
+          <h2><%= @post.title %></h2>
+          </div>
+          <div class="card-content">
+          <p><%= @post.topic %></p>
+          <p><%= @post.content %></p>
+          <a href=<%="../users/#{@post.user_id}"%>>user</a>
+          </div>
+        <div class="card-action">
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col m8 offset-m2">
+    <div class="comments">
+
+    <div class="new-comment center">
+      <%= form_for(@comment, :html => {:class => "form comment-info"}) do |f| %>
+          <%= f.text_area :content, :placeholder => "Add Comment" %>
+          <%= f.hidden_field :id %>
+          <%= f.hidden_field :post_id, :value => @post.id %>
+          <%= f.submit %>
+      <% end %>
+    </div>
+
+    <div class="col m8 offset-m2">
+    <div class="show-comments">
+      <% @comments.each do |comment| %></%>
+      <hr>
+      <div class="card tiny #e1f5fe light-blue lighten-5">
+      <div class="card-title"></div>
+      <div class="card-content">
+      <%= comment.content %>
+      </div>
+        <div class="card-action">
+        <a href=<%="../users/#{comment.user_id}"%>>user</a>
+        </div>
+        </div>
+        <% end %>
+      </div>
+      </div>
+    </div>
+</div>
+</div>
+
+<div class="row">
+<div class="col m8 offset-m2">
+<div class="search">coffee shops
+<%= form_tag(post_path, :method => "post", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search for places to meet" %><br>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+</div>
+</div>
+
+<div class="center col m8 offset-m2">
+<h2 class="z-depth-1 #81d4fa light-blue lighten-3">Coffee Search Results</h2>
+    <% @coffee.to_a.each do |x| %>
+    <div class="col m8 offset-m2">
+    <div class="card #e1f5fe light-blue lighten-5">
+    <div class="card-title">Name: <%= x["name"] %></div>
+    <div class="card-title">Address: <%= x["formatted_address"] %></div>
+    </div>
+
+
+    </div>
+    <% end %>
+    </div>
+
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+<div class="row">
+<div class="col m7 offset-m3">
+	<h1 class="help-wanted z-depth-1 light-blue lighten-3">Help Wanted With:</h1>
+</div>
+<div class="new-post col m10 offset-m1">
+<%= form_for @post do |form| %>
+<div class="input-group">
+<%= form.label :title %>
+<%= form.text_field :title %></br>
+</div>
+<div class="input-group">
+<%= form.label :topic %>
+<%= form.text_field :topic %></br>
+</div>
+<div class="input-group">
+<%= form.label :content %>
+<%= form.text_field :content %></br>
+</div>
+<%= form.submit "Create" %>
+<% end %>
+</div>
+
+</div>
+</div>
